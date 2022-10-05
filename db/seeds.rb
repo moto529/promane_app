@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+LearningRecord.create(:learning_method => "書籍", :language => "ruby", :learning_time => "1")
+LearningRecord.create(:learning_method => "ブログ", :language => "PHP", :learning_time => "2")
+LearningRecord.create(:learning_method => "YouTube", :language => "javascript", :learning_time => "3")
