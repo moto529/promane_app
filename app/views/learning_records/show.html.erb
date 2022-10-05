@@ -2,3 +2,13 @@
 <%= @learning_record.learning_method %>
 <%= @learning_record.language %>
 <%= @learning_record.learning_time %>
+<h3>edit</h3>
+<%= form_with model: @learning_record do |f| %>
+  <%= f.label :learning_method, "学習方法" %>
+  <%= f.text_field :learning_method %><br>
+  <%= f.label :language, "言語" %>
+  <%= f.text_field :language %><br>
+  <%= f.label :learning_time, "学習時間" %>
+  <%= f.number_field :learning_time %><br>
+  <%= f.submit "編集" %>
+<% end %>

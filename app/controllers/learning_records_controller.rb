@@ -18,6 +18,15 @@ class LearningRecordsController < ApplicationController
     @learning_record = LearningRecord.find(params[:id])
   end
 
+  def update
+    @learning_record = LearningRecord.find(params[:id])
+    if @learning_record.update(learning_record_params)
+      redirect_to learning_record_path
+    else
+      render "learning_records/show"
+    end
+  end
+
   private
   def learning_record_params
     params.require(:learning_record).permit(:learning_method, :language, :learning_time)
