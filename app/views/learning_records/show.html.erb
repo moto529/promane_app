@@ -12,3 +12,4 @@
   <%= f.number_field :learning_time %><br>
   <%= f.submit "編集" %>
 <% end %>
+<%= button_to "削除", learning_record_path(@learning_record.id), method: :delete %>
