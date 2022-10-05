@@ -14,6 +14,10 @@ class LearningRecordsController < ApplicationController
     end
   end
 
+  def show
+    @learning_record = LearningRecord.find(params[:id])
+  end
+
   private
   def learning_record_params
     params.require(:learning_record).permit(:learning_method, :language, :learning_time)
