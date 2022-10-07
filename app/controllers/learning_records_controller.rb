@@ -1,7 +1,7 @@
 class LearningRecordsController < ApplicationController
   
   def index
-    @learning_records = LearningRecord.all
+    @learning_records = LearningRecord.where(user_id: current_user.id).includes(:user).order("created_at DESC")
     @learning_record = LearningRecord.new
   end
 
