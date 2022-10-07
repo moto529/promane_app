@@ -7,6 +7,7 @@ class LearningRecordsController < ApplicationController
 
   def create
     @learning_record = LearningRecord.new(learning_record_params)
+    @learning_record.user = current_user 
     if @learning_record.save
       redirect_to learning_records_path
     else
