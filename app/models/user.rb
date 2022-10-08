@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :learning_records, dependent: :destroy
+
+  validates :password, presence: true, on: :create
 end
