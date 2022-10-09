@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "learning_records#index"
+  root "language#index"
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   #論理削除のルーティング
   patch '/users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
   
-  resources :learning_records, only: %i[index create show update destroy]
+  resources :languages
 end

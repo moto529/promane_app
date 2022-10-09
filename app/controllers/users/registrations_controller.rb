@@ -8,6 +8,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # 編集後のリダイレクト先を指定するメソッド
   def after_update_path_for(resource)
-    learning_records_path(resource)
+    languages_path(resource)
   end
 end

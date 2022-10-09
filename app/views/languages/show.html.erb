@@ -1,0 +1,9 @@
+<h3>show</h3>
+<%= @language.language %>
+<h3>edit</h3>
+<%= form_with model: @language do |f| %>
+  <%= f.label :language, "言語" %>
+  <%= f.text_field :language %><br>
+  <%= f.submit "編集" %>
+<% end %>
+<%= button_to "削除", language_path(@language.id), method: :delete %>

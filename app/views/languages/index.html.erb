@@ -1,0 +1,16 @@
+<h3>current_user</h3>
+<%= current_user.last_name %><%= current_user.first_name %><br>
+<%= link_to "プロフィールへ", profile_path %>
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+<h3>new</h3>
+<%= form_with model: @language do |f| %>
+  <%= f.label :language, "言語" %>
+  <%= f.text_field :language %><br>
+  <%= f.submit "投稿" %>
+<% end %>
+<h3>index</h3>
+<% @languages.each do |language| %>
+  <%= language.language %><br>
+  <%= link_to "詳細", language_path(language.id) %><br>
+<% end %>
