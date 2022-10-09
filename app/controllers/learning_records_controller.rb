@@ -1,12 +1,13 @@
 class LearningRecordsController < ApplicationController
   
   def index
-    @learning_records = LearningRecord.all
+    @learning_records = LearningRecord.where(user_id: current_user.id).includes(:user).order("created_at DESC")
     @learning_record = LearningRecord.new
   end
 
   def create
     @learning_record = LearningRecord.new(learning_record_params)
+    @learning_record.user = current_user 
     if @learning_record.save
       redirect_to learning_records_path
     else

@@ -1,0 +1,10 @@
+<h3>Users/show</h3>
+<p><%= current_user.last_name %></p>
+<p><%= current_user.first_name %></p>
+<p><%= current_user.age %></p>
+<p><%= current_user.email %></p>
+
+<h3>登録情報編集</h3>
+<%= link_to "登録情報編集", edit_user_registration_path %>
+<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "退会はこちら", unsubscribe_path(current_user) %>
