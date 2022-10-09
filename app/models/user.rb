@@ -6,4 +6,9 @@ class User < ApplicationRecord
   has_many :learning_records, dependent: :destroy
 
   validates :password, presence: true, on: :create
+
+  # is_deletedがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 end
