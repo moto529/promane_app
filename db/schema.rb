@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_08_125831) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_09_075227) do
   create_table "learning_records", force: :cascade do |t|
-    t.string "learning_method"
+    t.string "teaching_materials"
     t.string "language"
     t.integer "learning_time"
     t.datetime "created_at", null: false
