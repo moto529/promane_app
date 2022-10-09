@@ -36,6 +36,6 @@ class LearningRecordsController < ApplicationController
 
   private
   def learning_record_params
-    params.require(:learning_record).permit(:learning_method, :language, :learning_time)
+    params.require(:learning_record).permit(:teaching_materials, :language, :learning_time)
   end
 end
