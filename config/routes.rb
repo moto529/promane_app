@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   patch '/users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
   
   resources :languages
+  resources :records
 end

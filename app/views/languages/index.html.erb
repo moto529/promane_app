@@ -12,5 +12,6 @@
 <h3>index</h3>
 <% @languages.each do |language| %>
   <%= language.language %><br>
+  <%= link_to "学習を記録する", new_record_path %>
   <%= link_to "詳細", language_path(language.id) %><br>
 <% end %>
