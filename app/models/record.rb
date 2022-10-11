@@ -1,3 +1,3 @@
 class Record < ApplicationRecord
-  belongs_to :languages, class_name: "Record"
+  belongs_to :language
 end
