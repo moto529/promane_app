@@ -1,7 +1,7 @@
 class LanguagesController < ApplicationController
   
   def index
-    @languages = Language.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @languages = Language.where(user_id: current_user.id).includes(:user)
     @language = Language.new
   end
 

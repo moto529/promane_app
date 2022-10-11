@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #論理削除のルーティング
   patch '/users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
   
-  resources :languages
-  resources :records
+  resources :languages, only: %i[index create show update destroy] do
+    resources :records,only: %i[new create], module: :languages
+  end
 end
