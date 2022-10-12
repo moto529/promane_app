@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   patch '/users/:id/withdrawal' => 'users#withdrawal', as: 'withdrawal'
   
   resources :languages, only: %i[index create show update destroy] do
-    resources :records,only: %i[new create], module: :languages
+    resources :records,only: %i[new create show update destroy], module: :languages
   end
 end
