@@ -17,6 +17,7 @@ class LanguagesController < ApplicationController
 
   def show
     @language = Language.find(params[:id])
+    @records = @language.records
   end
 
   def update

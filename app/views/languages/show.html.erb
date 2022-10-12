@@ -7,3 +7,11 @@
   <%= f.submit "編集" %>
 <% end %>
 <%= button_to "削除", language_path(@language.id), method: :delete %>
+
+<h3>record_index</h3>
+<% @records.each do |record| %>
+  <%= record.created_at %>
+  <%= record.detail %>
+  <%= record.time %>時間
+  <%= link_to "詳細", language_record_path(@language.id, record.id) %><br>
+<% end %>
