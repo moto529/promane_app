@@ -5,6 +5,7 @@
 
 <h3>new</h3>
 <%= form_with model: @language do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
   <%= f.label :language, "言語" %>
   <%= f.text_field :language %><br>
   <%= f.submit "投稿" %>

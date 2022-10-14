@@ -9,7 +9,7 @@ module Languages
       if @record.save
         redirect_to languages_path
       else
-        render "languages/records/new"
+        render "languages/records/new", status: :unprocessable_entity
       end
     end
 

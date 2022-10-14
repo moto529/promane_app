@@ -11,7 +11,8 @@ class LanguagesController < ApplicationController
     if @language.save
       redirect_to languages_path
     else
-      render "languages/index"
+      @languages = Language.where(user_id: current_user.id).includes(:user)
+      render "languages/index", status: :unprocessable_entity
     end
   end
 
@@ -25,7 +26,8 @@ class LanguagesController < ApplicationController
     if @language.update(language_params)
       redirect_to language_path
     else
-      render "languages/show"
+      @records = @language.records
+      render "languages/show", status: :unprocessable_entity
     end
   end
 
