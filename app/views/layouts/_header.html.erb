@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <div>
+    <%= link_to "ホーム", languages_path %>
+    <%= link_to "プロフィール", profile_path %>
+    <%= link_to "履歴", history_path %>
+    ログイン中のユーザー👉<%= link_to current_user.last_name, profile_path %><%= link_to current_user.first_name, profile_path %>
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+<% end %>
