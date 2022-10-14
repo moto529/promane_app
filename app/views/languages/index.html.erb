@@ -1,9 +1,3 @@
-<h3>current_user</h3>
-<%= current_user.last_name %><%= current_user.first_name %><br>
-<%= link_to "プロフィールへ", profile_path %>
-<%= link_to "記録", history_path %>
-<%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-
 <h3>new</h3>
 <%= form_with model: @language do |f| %>
   <%= render "layouts/error_messages", model: f.object %>
