@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def history
+   @records = User.find(current_user.id).records.all.order(created_at: :desc)
+  end
+
   def withdrawal
     @user = User.find(params[:id])
     @user.update(is_deleted: true)

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   get "users/show" => "users#show", as: "profile"
+
+  get "users/history" => "users#history", as: "history"
   #退会確認画面
   get "/users/:id/unsubscribe" => "users#unsubscribe", as: "unsubscribe"
   #論理削除のルーティング
