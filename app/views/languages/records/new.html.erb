@@ -1,5 +1,5 @@
 <h3>new_record</h3>
-
+<p><%= @language.language %></p>
 <%= form_with url: language_records_path(), model: @record do |f| %>
   <%= render "layouts/error_messages", model: f.object %>
   <%= f.label :detail, "詳細" %><br>

@@ -1,6 +1,7 @@
 module Languages
   class RecordsController < ApplicationController
     def new
+      @language = Language.find(params[:language_id])
       @record = Record.new
     end
 
