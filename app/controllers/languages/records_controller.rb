@@ -9,7 +9,7 @@ module Languages
       if @record.save
         redirect_to languages_path
       else
-        render "languages/records/new"
+        render "languages/records/new", status: :unprocessable_entity
       end
     end
 
@@ -23,7 +23,9 @@ module Languages
       if @record.update(record_params)
         redirect_to language_path(params[:language_id])
       else
-        render "languages/records/show"
+        @record = Record.find(params[:id])
+        @language = Language.find(params[:language_id])
+        render "languages/records/show", status: :unprocessable_entity
       end
     end
 
