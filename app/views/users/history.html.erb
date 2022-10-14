@@ -1,0 +1,7 @@
+<h3>user/history</h3>
+<% @records.each do |record| %>
+  <%= record.language.language %>
+  <%= record.created_at %>
+  <%= record.detail %>
+  <%= record.time %>時間<br>
+<% end %>
