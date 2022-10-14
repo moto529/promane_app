@@ -1,7 +1,18 @@
 <h3>user/history</h3>
-<% @records.each do |record| %>
-  <%= record.language.language %>
-  <%= record.created_at %>
-  <%= record.detail %>
-  <%= record.time %>時間<br>
-<% end %>
+<table>
+    <tr>
+      <th>言語</th>
+      <th>作成日時</th>
+      <th>詳細</th>
+      <th>学習時間</th>
+    </tr>
+  <% @records.each do |record| %>
+    <tr>
+      <td><%= link_to record.language.language, language_path(record.language.id) %></td>
+      <td><%= record.created_at.to_s(:datetime_jp) %></td>
+      <td><%= record.detail.truncate(20) %></td>
+      <td><%= record.time %>時間</td>
+      <td><%= link_to "詳細", language_record_path(record.language.id, record.id) %></td>
+    </tr>
+  <% end %>
+</table>
