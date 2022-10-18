@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
- # パスワードなしで更新できるメソッド
+  # パスワードなしで更新できるメソッド
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
