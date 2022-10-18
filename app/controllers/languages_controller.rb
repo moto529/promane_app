@@ -1,5 +1,4 @@
 class LanguagesController < ApplicationController
-  
   def index
     @languages = Language.where(user_id: current_user.id).includes(:user)
     @language = Language.new
@@ -7,12 +6,12 @@ class LanguagesController < ApplicationController
 
   def create
     @language = Language.new(language_params)
-    @language.user = current_user 
+    @language.user = current_user
     if @language.save
       redirect_to languages_path
     else
       @languages = Language.where(user_id: current_user.id).includes(:user)
-      render "languages/index", status: :unprocessable_entity
+      render 'languages/index', status: :unprocessable_entity
     end
   end
 
@@ -27,7 +26,7 @@ class LanguagesController < ApplicationController
       redirect_to language_path
     else
       @records = @language.records
-      render "languages/show", status: :unprocessable_entity
+      render 'languages/show', status: :unprocessable_entity
     end
   end
 
@@ -38,6 +37,7 @@ class LanguagesController < ApplicationController
   end
 
   private
+
   def language_params
     params.require(:language).permit(:language)
   end

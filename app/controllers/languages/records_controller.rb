@@ -10,7 +10,7 @@ module Languages
       if @record.save
         redirect_to languages_path
       else
-        render "languages/records/new", status: :unprocessable_entity
+        render 'languages/records/new', status: :unprocessable_entity
       end
     end
 
@@ -26,7 +26,7 @@ module Languages
       else
         @record = Record.find(params[:id])
         @language = Language.find(params[:language_id])
-        render "languages/records/show", status: :unprocessable_entity
+        render 'languages/records/show', status: :unprocessable_entity
       end
     end
 
@@ -37,6 +37,7 @@ module Languages
     end
 
     private
+
     def record_params
       params.require(:record).permit(:detail, :time).merge(language_id: params[:language_id])
     end
