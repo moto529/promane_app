@@ -1,9 +1,20 @@
 <% if user_signed_in? %>
-  <div>
-    <%= link_to "ホーム", languages_path %>
+  <div class="header_after_sign_in">
+    <%= link_to languages_path do %>
+      <%= image_tag "Promane.png" %>
+    <% end %>
     <%= link_to "プロフィール", profile_path %>
     <%= link_to "履歴", history_path %>
     ログイン中のユーザー👉<%= link_to current_user.last_name, profile_path %><%= link_to current_user.first_name, profile_path %>
     <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+<% else %>
+  <div class="header_before_sign_in">
+    <%= image_tag "Promane.png" %>
+    <%- if controller_name != 'sessions' %>
+      <%= link_to "ログイン", new_session_path(resource_name) %>
+    <%- elsif devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to "アカウント作成", new_registration_path(resource_name) %>
+    <% end %>
   </div>
 <% end %>
