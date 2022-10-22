@@ -9,16 +9,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item me-lg-5 mt-2 ms-5">
-            <%= link_to "履歴", history_path, class: "nav-link" %>
+          <li class="nav-item me-lg-5 mt-2 ms-5 navbar-black">
+            <%= link_to "履歴", history_path, class: "nav-link fw-bolder" %>
           </li>
           <li class="nav-item me-lg-5 mt-2 ms-5">
-            <%= link_to current_user.last_name + current_user.first_name, profile_path, class: "nav-link" %>
+            <%= link_to current_user.last_name + current_user.first_name, profile_path, class: "nav-link fw-bolder" %>
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item me-5 mt-2 ms-5">
-            <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: "nav-link" %>
+            <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: "nav-link fw-bolder" %>
           </li>
         </ul>
       </div>
@@ -28,9 +28,9 @@
   <nav class="header_before_sign_in navbar">
     <%= image_tag "Promane.png", class: "navbar-brand ms-5 my-3" %>
     <%- if controller_name != 'sessions' %>
-      <%= link_to "ログイン", new_session_path(resource_name), class: "nav-link me-5" %>
+      <%= link_to "ログイン", new_session_path(resource_name), class: "nav-link me-5 fw-bolder" %>
     <%- elsif devise_mapping.registerable? && controller_name != 'registrations' %>
-      <%= link_to "アカウント作成", new_registration_path(resource_name), class: "nav-link me-5" %>
+      <%= link_to "アカウント作成", new_registration_path(resource_name), class: "nav-link me-5 fw-bolder" %>
     <% end %>
   </nav>
 <% end %>
