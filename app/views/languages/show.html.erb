@@ -1,18 +1,41 @@
-<h3>show</h3>
-<%= @language.language %>
-<h3>edit</h3>
-<%= form_with model: @language do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
-  <%= f.label :language, "言語" %>
-  <%= f.text_field :language %><br>
-  <%= f.submit "編集" %>
-<% end %>
-<%= button_to "削除", language_path(@language.id), method: :delete %>
+<div class="row">
+  <div class="card offset-2 col-8">
+    <div class="row">
+      <h3 class="mt-5 text-center fs-2"><%= @language.language %></h3>
+      <div class="text-center">
+        <span>こちらのフォームで編集できます。</span>
+      </div>
 
-<h3>record_index</h3>
-<% @records.each do |record| %>
-  <%= record.created_at %>
-  <%= record.detail %>
-  <%= record.time %>時間
-  <%= link_to "詳細", language_record_path(@language.id, record.id) %><br>
-<% end %>
+      <%= form_with model: @language do |f| %>
+        <%= render "layouts/error_messages", model: f.object %>
+        <div class="offset-3 col-6 mt-4">
+          <%= f.text_field :language, class: "form-control" %>
+        </div>
+        
+        <div class="offset-3 col-6 d-grid mt-4">
+          <%= f.submit "編集", class: "btn btn-sky_blue text-white" %>
+        </div>
+      <% end %>
+      <div class="text-center mt-3 mb-5 d-grid">
+        <%= button_to "削除", language_path(@language.id), method: :delete, class: "btn btn-secondary col-6 mt-3 mb-5" %>
+      </div>
+    
+    </div>
+  </div>
+  <div class="card offset-2 col-8 mt-5 mb-3">
+      <h3 class="mt-4 text-center">学習履歴一覧</h3>
+      <table class="table table-borderless mb-5">
+        <div class="offset-2 col-8 mb-5">
+          <% @records.each do |record| %>
+          <tr>
+            <td style="width: 12%;"></td>
+            <td style="width: 30%;" ><%= record.created_at.to_s(:datetime_jp) %></td>
+            <td style="width: 20%;"><%= record.detail.truncate(20) %></td>
+            <td><%= record.time %>時間</td>
+            <td><%= link_to "詳細", language_record_path(@language.id, record.id), class: "link-dark" %></td>
+          <tr>
+          <% end %>
+        </div>
+      </table>
+    </div>
+</div>

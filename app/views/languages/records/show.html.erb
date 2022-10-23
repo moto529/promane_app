@@ -1,19 +1,29 @@
-<h3>record_show</h3>
-
-<div>詳細:<%= @record.detail %></div>
-<div>学習時間:<%= @record.time %></div>
-<div>作成時:<%= @record.updated_at %></div>
-
-<h3>record_edit</h3>
-
-<%= form_with url: language_record_path(), model: @record do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
-  <%= f.label :detail, "詳細" %><br>
-  <%= f.text_area :detail %><br>
-  <%= f.label :time, "学習時間" %><br>
-  <%= f.number_field :time %><br>
-  <%= f.submit "投稿" %>
-<% end %>
-
-<h3>record_destroy</h3>
-<%= button_to "削除", language_record_path(@language.id, @record.id), method: :delete %>
+<div class="row">
+  <div class="card offset-2 col-8">
+    <h3 class="text-center pt-5">学習記録の詳細</h3>
+    <div class="text-center">
+      <span>こちらのフォームで編集できます。</span>
+    </div>
+    <%= form_with url: language_record_path(), model: @record do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+      <div class="offset-2 mt-3 mb-3">
+        <%= f.label :detail, "詳細" %><br>
+      </div>
+      <div class="offset-2 col-8">
+        <%= f.text_area :detail, class: "form-control" %><br>
+      </div>
+      <div class="offset-2 mt-3 mb-3">
+        <%= f.label :time, "学習時間" %><br>
+      </div>
+      <div class="offset-2 col-8">
+        <%= f.number_field :time, class: "form-control" %><br>
+      </div>
+      <div class="offset-3 col-6 d-grid mt-3">
+        <%= f.submit "編集", class: "btn btn-orange" %>
+      </div>
+    <% end %>
+    <div class="text-center mt-3 mb-5 d-grid">
+      <%= button_to "削除", language_record_path(@language.id, @record.id), method: :delete, class: "btn btn-secondary col-6 mt-3 mb-4" %>
+    </div>
+  </div>
+</div>
