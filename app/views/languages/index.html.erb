@@ -1,13 +1,29 @@
-<h3>new</h3>
-<%= form_with model: @language do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
-  <%= f.label :language, "言語" %>
-  <%= f.text_field :language %><br>
-  <%= f.submit "投稿" %>
-<% end %>
-<h3>index</h3>
-<% @languages.each do |language| %>
-  <%= language.language %><br>
-  <%= link_to "学習を記録する", new_language_record_path(language.id) %>
-  <%= link_to "詳細", language_path(language.id) %><br>
-<% end %>
+<div class="pt-5 row">
+  <div class="card col-lg-3 offset-lg-2" style="height: 20rem;">
+    <p class="bg-sky_blue text-black text-center" style="width: 95px; height: 30px; font-size: 18px">言語登録</p>
+    <h5 class="text-center pt-2 pb-5">言語を入力してください</h5>
+    <div class="row">
+      <%= form_with model: @language do |f| %>
+        <%= render "layouts/error_messages", model: f.object %>
+        <div class="col-sm-10 offset-sm-1 pb-3">
+          <%= f.text_field :language, class: "form-control", placeholder: "言語" %><br>
+        </div>
+        <div class="col-sm-8 offset-sm-2 d-grid text-center">
+          <%= f.submit "投稿", class: "btn btn-sky_blue text-black" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="card col-lg-4 offset-lg-1">
+    <p class="bg-orange text-dark text-center" style="width: 95px; height: 30px; font-size: 18px;">言語一覧</p>
+    <table class="table table-borderless">
+      <% @languages.each do |language| %>
+        <tr>
+          <td class="ps-5 fs-5 pe-5 py-4"><%= language.language %></td>
+          <td class="ps-5 pt-4"><%= link_to "記録する", new_language_record_path(language.id), class: "btn" %></td>
+          <td class="ps-4 pt-4"><%= link_to "詳細", language_path(language.id), class: "btn" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
