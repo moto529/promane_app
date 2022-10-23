@@ -1,7 +1,7 @@
 .btn-orange {
   background-color: #FF8C21;
   color: white;
-}
+};
 .btn-orange:hover, .btn-orange:focus, 
 .btn-orange:active, .btn-orange:active:focus, .btn-orange:active:hover, .btn-orange:active.focus,
 .btn-orange.active, .btn-orange.active:focus, .btn-orange.active:hover, .btn-orange.active.focus,
@@ -12,6 +12,33 @@
 .btn-orange.disabled:hover, .btn-orange[disabled]:hover, fieldset[disabled] .btn-orange:hover,
 .btn-orange.disabled:focus, .btn-orange[disabled]:focus, fieldset[disabled] .btn-orange:focus,
 .btn-orange.disabled.focus, .btn-orange[disabled].focus, fieldset[disabled] .btn-orange.focus {
-    background: #ff9431e7; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+    background: #fe8413; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
     color: white; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
-}
+};
+
+.btn-sky_blue {
+  background-color: #7098FE;
+};
+
+.btn-sky_blue:hover, .btn-sky_blue:focus, 
+.btn-sky_blue:active, .btn-sky_blue:active:focus, .btn-sky_blue:active:hover, .btn-sky_blue:active.focus,
+.btn-sky_blue.active, .btn-sky_blue.active:focus, .btn-sky_blue.active:hover, .btn-sky_blue.active.focus,
+.open > .dropdown-toggle.btn-sky_blue, 
+.open > .dropdown-toggle.btn-sky_blue:hover,
+.open > .dropdown-toggle.btn-sky_blue:focus, 
+.open > .dropdown-toggle.btn-sky_blue.focus,
+.btn-sky_blue.disabled:hover, .btn-sky_blue[disabled]:hover, fieldset[disabled] .btn-sky_blue:hover,
+.btn-sky_blue.disabled:focus, .btn-sky_blue[disabled]:focus, fieldset[disabled] .btn-sky_blue:focus,
+.btn-sky_blue.disabled.focus, .btn-sky_blue[disabled].focus, fieldset[disabled] .btn-sky_blue.focus {
+    background-color: #7098fedb;
+};
+
+.bg-orange {
+  background-color: #FEAC70;
+  color: white;
+};
+
+.bg-sky_blue {
+  background-color: #7098FE;
+  color: white;
+};
