@@ -5,7 +5,9 @@
       <span>こちらのフォームで編集できます。</span>
     </div>
     <%= form_with url: language_record_path(), model: @record do |f| %>
-      <%= render "layouts/error_messages", model: f.object %>
+      <div class="text-center text-danger">
+        <%= render "layouts/error_messages", model: f.object %>
+      </div>
       <div class="offset-2 mt-3 mb-3">
         <%= f.label :detail, "詳細" %><br>
       </div>

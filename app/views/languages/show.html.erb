@@ -7,8 +7,10 @@
       </div>
 
       <%= form_with model: @language do |f| %>
-        <%= render "layouts/error_messages", model: f.object %>
         <div class="offset-3 col-6 mt-4">
+          <div class="text-center text-danger">
+            <%= render "layouts/error_messages", model: f.object %>
+          </div>
           <%= f.text_field :language, class: "form-control" %>
         </div>
         

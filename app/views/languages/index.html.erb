@@ -4,10 +4,13 @@
     <h5 class="text-center pt-2 pb-5">言語を入力してください</h5>
     <div class="row">
       <%= form_with model: @language do |f| %>
-        <%= render "layouts/error_messages", model: f.object %>
         <div class="col-sm-10 offset-sm-1 pb-3">
-          <%= f.text_field :language, class: "form-control", placeholder: "言語" %><br>
+          <div class="text-center text-danger">
+            <%= render "layouts/error_messages", model: f.object %>
+          </div>
+          <%= f.text_field :language, class: "form-control", placeholder: "言語" %>
         </div>
+        
         <div class="col-sm-8 offset-sm-2 d-grid text-center">
           <%= f.submit "投稿", class: "btn btn-sky_blue text-black" %>
         </div>
