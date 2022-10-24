@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'cssbundling-rails'
 
+gem 'rails-i18n'
+
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 
