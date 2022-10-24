@@ -1,2 +1,9 @@
-<h3>unsubscribe</h3>
-<%= button_to "退会する", withdrawal_path, method: :patch, data: { confilm: "本当に退会しますか？" } %>
+<div class="row">
+  <div class="card offset-3 col-6 mt-5">
+    <h3 class="text-center mt-4">退会しますか？</h3>
+    <span class="text-center">退会すると、2度と同じユーザーで本サービスを利用することができなくなります。</span>
+    <div class="text-center mt-3 mb-5 d-grid">
+      <%= button_to "退会する", withdrawal_path, method: :patch, form: { data: { turbo_confirm: "本当に退会しますか？" } }, class: "btn btn-orange col-4 mt-3" %>
+    </div>
+  </div>
+</div>
