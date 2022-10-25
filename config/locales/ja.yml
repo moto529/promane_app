@@ -6,7 +6,8 @@ ja:
         language: 言語
       record:
         detail: 詳細
-        time: 学習時間
+        learning_hours: 学習時間(時)
+        learning_minutes: 学習時間(分) 
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
