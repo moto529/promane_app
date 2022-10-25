@@ -34,7 +34,7 @@ module Languages
     private
 
     def record_params
-      params.require(:record).permit(:detail, :time).merge(language_id: params[:language_id])
+      params.require(:record).permit(:detail, :learning_hours, :laerning_minutes).merge(language_id: params[:language_id])
     end
   end
 end
