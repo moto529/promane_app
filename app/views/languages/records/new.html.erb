@@ -1,11 +1,11 @@
+<div class="text-center text-danger">
+  <%= render "layouts/error_messages", model: @record %>
+</div>
 <div class="row">
   <div class="card offset-2 col-8 mt-4">
     <h3 class="text-center mt-5">学習を記録しましょう!</h3>
     <p class="offset-5 mb-3">学習言語 : <%= @record.language.language %></p>
     <%= form_with url: language_records_path(), model: @record do |f| %>
-      <div class="text-center text-danger">
-        <%= render "layouts/error_messages", model: f.object %>
-      </div>
       <div class="offset-2 mb-1">
         <%= f.label :detail, "詳細" %><br>
       </div>

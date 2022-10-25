@@ -13,6 +13,8 @@
 
   <body class="bg-light">
     <%= render "layouts/header" %>
+    <%= content_tag(:div, flash[:alert], class: "text-center bg-danger bg-opacity-50 fs-5") if flash[:alert] %>
+    <%= content_tag(:div, flash[:notice], class: "text-center text-light bg-success bg-opacity-50") if flash[:notice] %>
     <%= yield %>
   </body>
 </html>
