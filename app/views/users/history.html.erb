@@ -1,21 +1,28 @@
 <div class="bg-white mx-5 mt-4 border border-primary border-2 rounded-3">
   <p class="bg-sky_blue text-black fs-5 text-center pt-3 rounded-2 fw-light" style="width: 100px; height: 64px;">履歴</p>
-  <table class="table table-borderless mt-sm-4 mb-sm-5">
-      <tr>
-        <th style="width: 12%;"></th>
-        <th style="width: 12%;">言語</th>
-        <th style="width: 22%;">作成日時</th>
-        <th style="width: 15%;">詳細</th>
-        <th style="width: 15%;">学習時間</th>
-      </tr>
-    <% @histories.each do |history| %>
-      <tr>
-        <td></td>
-        <td><%= link_to history.language.language, language_path(history.language.id), class: "link-dark" %></td>
-        <td><%= history.created_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to history.detail.truncate(20), language_record_path(history.language.id, history.id),class: "link-dark" %></td>
-        <td><%= history.time %>時間</td>
-      </tr>
-    <% end %>
-  </table>
+  <% if @histories.present? %>
+    <table class="table table-borderless mt-sm-4 mb-sm-5">
+        <tr>
+          <th style="width: 12%;"></th>
+          <th style="width: 12%;">言語</th>
+          <th style="width: 22%;">作成日時</th>
+          <th style="width: 15%;">詳細</th>
+          <th style="width: 15%;">学習時間</th>
+        </tr>
+      <% @histories.each do |history| %>
+        <tr>
+          <td></td>
+          <td><%= link_to history.language.language, language_path(history.language.id), class: "link-dark" %></td>
+          <td><%= history.created_at.to_s(:datetime_jp) %></td>
+          <td><%= link_to history.detail.truncate(20), language_record_path(history.language.id, history.id),class: "link-dark" %></td>
+          <td><%= history.time %>時間</td>
+        </tr>
+      <% end %>
+    </table>
+  <% elsif %>
+    <h5 class="text-center mb-5">
+      まだ学習を記録していません。<br>
+      <%= link_to "こちら", languages_path %>から学習を記録してください。
+    </h5>
+  <% end %>
 </div>
