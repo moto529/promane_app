@@ -1,12 +1,11 @@
 module Languages
   class RecordsController < ApplicationController
-    def new
-      @language = Language.find(params[:language_id])
-      @record = @language.records.new
-    end
+    load_and_authorize_resource :language
+    load_and_authorize_resource through: :language
+    
+    def new; end
 
     def create
-      @record = Record.new(record_params)
       if @record.save
         redirect_to languages_path
       else
@@ -14,13 +13,9 @@ module Languages
       end
     end
 
-    def show
-      @record = Record.find(params[:id])
-      @language = Language.find(params[:language_id])
-    end
+    def show; end
 
     def update
-      @record = Record.find(params[:id])
       if @record.update(record_params)
         redirect_to language_path(params[:language_id])
       else
@@ -31,7 +26,6 @@ module Languages
     end
 
     def destroy
-      @record = Record.find(params[:id])
       @record.destroy
       redirect_to language_path(params[:language_id])
     end
