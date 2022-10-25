@@ -19,14 +19,21 @@
   </div>
   <div class="card col-lg-4 offset-lg-1">
     <p class="bg-orange text-dark text-center" style="width: 120px; height: 30px; font-size: 18px;">学習中の言語</p>
-    <table class="table table-borderless">
-      <% @user_languages.each do |u_language| %>
-        <tr>
-          <td class="ps-5 fs-5 pe-5 py-4"><%= u_language.language %></td>
-          <td class="ps-5 pt-4"><%= link_to "記録する", new_language_record_path(u_language.id), class: "btn" %></td>
-          <td class="ps-4 pt-4"><%= link_to "詳細", language_path(u_language.id), class: "btn" %></td>
-        </tr>
-      <% end %>
-    </table>
+    <% if @user_languages.present? %>
+      <table class="table table-borderless">
+        <% @user_languages.each do |u_language| %>
+          <tr>
+            <td class="ps-5 fs-5 pe-5 py-4"><%= u_language.language %></td>
+            <td class="ps-5 pt-4"><%= link_to "記録する", new_language_record_path(u_language.id), class: "btn" %></td>
+            <td class="ps-4 pt-4"><%= link_to "詳細", language_path(u_language.id), class: "btn" %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% elsif %>
+      <p class="text-center mt-5">
+        まだ、言語が登録されていません<br>
+        ←左のフォームから言語を登録してください。
+      </p>
+    <% end %>
   </div>
 </div>
