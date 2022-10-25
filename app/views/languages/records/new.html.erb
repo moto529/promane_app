@@ -10,16 +10,20 @@
         <%= f.label :detail, "詳細" %><br>
       </div>
 
-      <div class="offset-2 col-8 mb-3">
-        <%= f.text_area :detail, class: "form-control", placeholder: "どうやって学習しましたか？" %><br>
+      <div class="offset-2 col-8 mb-2">
+        <%= f.text_area :detail, class: "form-control", placeholder: "どうやって学習したか、簡単に振り返ってみましょう" %><br>
       </div>
-      
-      <div class="offset-2 mb-1">
-        <%= f.label :time, "学習時間" %><br>
-      </div>
-      
-      <div class="offset-2 col-8">
-        <%= f.number_field :time, class: "form-control" %><br>
+      <div class="row">
+        <div class="offset-2 mb-2">学習時間</div>
+        <div class="offset-2 col-4">
+          <%= f.label :learning_hours, "時" %>
+          <%= f.select :learning_hours, (0..10).to_a,{}, class: "form-select" %>
+        </div>
+        
+        <div class="col-4 mb-4">
+          <%= f.label :laerning_minutes, "分" %>
+          <%= f.select :laerning_minutes,[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],{}, class: "form-select" %><br>
+        </div>
       </div>
       
       <div class="text-center mt-3 mb-5 d-grid">
