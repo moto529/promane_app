@@ -8,13 +8,13 @@
         <th style="width: 15%;">詳細</th>
         <th style="width: 15%;">学習時間</th>
       </tr>
-    <% @records.each do |record| %>
+    <% @histories.each do |history| %>
       <tr>
         <td></td>
-        <td><%= link_to record.language.language, language_path(record.language.id), class: "link-dark" %></td>
-        <td><%= record.created_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to record.detail.truncate(20), language_record_path(record.language.id, record.id),class: "link-dark" %></td>
-        <td><%= record.time %>時間</td>
+        <td><%= link_to history.language.language, language_path(history.language.id), class: "link-dark" %></td>
+        <td><%= history.created_at.to_s(:datetime_jp) %></td>
+        <td><%= link_to history.detail.truncate(20), language_record_path(history.language.id, history.id),class: "link-dark" %></td>
+        <td><%= history.time %>時間</td>
       </tr>
     <% end %>
   </table>

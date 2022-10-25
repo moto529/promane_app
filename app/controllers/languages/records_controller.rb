@@ -2,12 +2,13 @@ module Languages
   class RecordsController < ApplicationController
     load_and_authorize_resource :language
     load_and_authorize_resource through: :language
+    before_action :authenticate_user!
     
     def new; end
 
     def create
       if @record.save
-        redirect_to languages_path
+        redirect_to history_path
       else
         render 'languages/records/new', status: :unprocessable_entity
       end
@@ -17,7 +18,7 @@ module Languages
 
     def update
       if @record.update(record_params)
-        redirect_to language_path(params[:language_id])
+        redirect_to history_path
       else
         @record = Record.find(params[:id])
         @language = Language.find(params[:language_id])
@@ -27,7 +28,7 @@ module Languages
 
     def destroy
       @record.destroy
-      redirect_to language_path(params[:language_id])
+      redirect_to history_path
     end
 
     private
