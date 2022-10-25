@@ -1,3 +1,6 @@
+<div class="text-center text-danger">
+  <%= render "layouts/error_messages", model: @language %>
+</div>
 <div class="row">
   <div class="card offset-2 col-8">
     <div class="row">
@@ -8,9 +11,6 @@
 
       <%= form_with model: @language do |f| %>
         <div class="offset-3 col-6 mt-4">
-          <div class="text-center text-danger">
-            <%= render "layouts/error_messages", model: f.object %>
-          </div>
           <%= f.text_field :language, class: "form-control" %>
         </div>
         

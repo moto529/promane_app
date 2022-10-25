@@ -1,3 +1,6 @@
+<div class="text-center text-danger">
+  <%= render "layouts/error_messages", model: @language %>
+</div>
 <div class="pt-5 row">
   <div class="card col-lg-3 offset-lg-2" style="height: 20rem;">
     <p class="bg-sky_blue text-black text-center" style="width: 95px; height: 30px; font-size: 18px">言語登録</p>
@@ -5,9 +8,6 @@
     <div class="row">
       <%= form_with model: @language do |f| %>
         <div class="col-sm-10 offset-sm-1 pb-3">
-          <div class="text-center text-danger">
-            <%= render "layouts/error_messages", model: f.object %>
-          </div>
           <%= f.text_field :language, class: "form-control", placeholder: "言語" %>
         </div>
         
