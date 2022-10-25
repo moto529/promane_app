@@ -8,6 +8,7 @@ module Languages
 
     def create
       if @record.save
+        flash[:notice] = "#{@language.language}の学習を記録しました"
         redirect_to history_path
       else
         render 'languages/records/new', status: :unprocessable_entity
@@ -18,6 +19,7 @@ module Languages
 
     def update
       if @record.update(record_params)
+        flash[:notice] = "#{@language.language}の学習を編集しました"
         redirect_to history_path
       else
         @record = Record.find(params[:id])
@@ -28,6 +30,7 @@ module Languages
 
     def destroy
       @record.destroy
+      flash[:notice] = "#{@language.language}の学習を削除しました"
       redirect_to history_path
     end
 
