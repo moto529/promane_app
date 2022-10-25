@@ -20,11 +20,11 @@
   <div class="card col-lg-4 offset-lg-1">
     <p class="bg-orange text-dark text-center" style="width: 120px; height: 30px; font-size: 18px;">学習中の言語</p>
     <table class="table table-borderless">
-      <% @languages.each do |language| %>
+      <% @user_languages.each do |u_language| %>
         <tr>
-          <td class="ps-5 fs-5 pe-5 py-4"><%= language.language %></td>
-          <td class="ps-5 pt-4"><%= link_to "記録する", new_language_record_path(language.id), class: "btn" %></td>
-          <td class="ps-4 pt-4"><%= link_to "詳細", language_path(language.id), class: "btn" %></td>
+          <td class="ps-5 fs-5 pe-5 py-4"><%= u_language.language %></td>
+          <td class="ps-5 pt-4"><%= link_to "記録する", new_language_record_path(u_language.id), class: "btn" %></td>
+          <td class="ps-4 pt-4"><%= link_to "詳細", language_path(u_language.id), class: "btn" %></td>
         </tr>
       <% end %>
     </table>
