@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_user!
   def show; end
 
   def history
-    @records = User.find(current_user.id).records.all.order(created_at: :desc)
+    # ユーザーとlanguageに紐づいたレコードを作成降順に取得する
+    @histories = User.find(current_user.id).records.all.order(created_at: :desc)
   end
 
   def unsubscribe; end

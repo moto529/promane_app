@@ -1,7 +1,9 @@
 class LanguagesController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_user!
   def index
-    @languages = Language.where(user_id: current_user.id).includes(:user)
+    # ユーザーに紐づく言語を取得
+    @user_languages = Language.where(user_id: current_user.id).includes(:user)
     @language = Language.new
   end
 
@@ -10,7 +12,7 @@ class LanguagesController < ApplicationController
     if @language.save
       redirect_to languages_path
     else
-      @languages = Language.where(user_id: current_user.id).includes(:user)
+      @user_languages = Language.where(user_id: current_user.id).includes(:user)
       render 'languages/index', status: :unprocessable_entity
     end
   end
@@ -21,7 +23,7 @@ class LanguagesController < ApplicationController
 
   def update
     if @language.update(language_params)
-      redirect_to language_path
+      redirect_to languages_path
     else
       @records = @language.records
       render 'languages/show', status: :unprocessable_entity
