@@ -32,6 +32,7 @@ gem 'devise'
 gem 'cssbundling-rails'
 
 gem 'rails-i18n'
+gem 'enum_help'
 
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false

@@ -22,6 +22,16 @@
       </div>
 
       <div class="offset-2">
+        <%= f.label :gender, "性別", class: "form-check-label ms-2" %><br>
+        <%= f.label :man, "男性", class: "form-check-label offset-1" %>
+        <%= f.radio_button :gender, :man, class: "form-check-input" %>
+        <%= f.label :woman, "女性", class: "form-check-label offset-2" %>
+        <%= f.radio_button :gender, :woman, class: "form-check-input" %>
+        <%= f.label :blank, "未記入", class: "form-check-label offset-2" %>
+        <%= f.radio_button :gender, :blank, class: "form-check-input" %>
+      </div>
+
+      <div class="offset-2">
         <%= f.label :age, "年齢" %>
       </div>
       <div class="offset-2 col-8 mb-3">

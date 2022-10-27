@@ -4,8 +4,9 @@
     <p class="text-center mt-4">名前 :<%= current_user.last_name %><%= current_user.first_name %></p>
     <p class="text-center mt-3">年齢 :<%= current_user.age %></p>
     <p class="text-center mt-3">メールアドレス :<%= current_user.email %></p>
+    <p class="text-center mt-3">性別 :<%= current_user.gender_i18n %></p>
 
-    <div class="offset-8 mt-3 mb-4">
+    <div class="offset-8 mt-2 mb-4">
       <%= link_to "登録情報編集", edit_user_registration_path, class: "me-3" %><%= link_to "退会はこちら", unsubscribe_path(current_user) %>
     </div>
   </div>
