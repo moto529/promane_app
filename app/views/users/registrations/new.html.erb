@@ -11,8 +11,18 @@
       <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control", placeholder: "名" %>
     </div>
 
-    <div class="field col-sm-4 offset-sm-4 mb-5">
+    <div class="field col-sm-4 offset-sm-4 mb-4">
       <%= f.number_field :age, autofocus: true, autocomplete: "age", class: "form-control", placeholder: "年齢" %>
+    </div>
+
+    <div class="field col-sm-6 offset-sm-4 mb-3">
+      <%= f.label :gender, "性別", class: "form-check-label ms-2" %><br>
+      <%= f.label :man, "男性", class: "form-check-label offset-1" %>
+      <%= f.radio_button :gender, :man, class: "form-check-input" %>
+      <%= f.label :woman, "女性", class: "form-check-label offset-1" %>
+      <%= f.radio_button :gender, :woman, class: "form-check-input" %>
+      <%= f.label :blank, "未記入", class: "form-check-label offset-1" %>
+      <%= f.radio_button :gender, :blank, class: "form-check-input" %>
     </div>
 
     <div class="field col-sm-4 offset-sm-4 mb-5">
@@ -27,7 +37,7 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード(確認)" %>
     </div>
 
-    <div class="actions col-sm-4 offset-sm-4 d-grid text-center">
+    <div class="actions col-sm-4 offset-sm-4 d-grid text-center mb-5">
       <%= f.submit "登録", class: "btn btn-orange" %>
     </div>
   </div>
