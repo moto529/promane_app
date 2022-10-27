@@ -19,7 +19,8 @@
         </div>
       <% end %>
       <div class="text-center mt-3 mb-5 d-grid">
-        <%= button_to "削除", language_path(@language.id), method: :delete, class: "btn btn-secondary col-6 mt-3 mb-5" %>
+        <%= button_to "削除", language_path(@language.id), method: :delete, class: "btn btn-secondary col-6 mt-3" %>
+        <span style="color: red;">*学習履歴も削除されます</span>
       </div>
     
     </div>
