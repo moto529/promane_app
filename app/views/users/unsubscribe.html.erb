@@ -6,7 +6,7 @@
       また、学習した言語や学習記録も削除されます。
     </span>
     <div class="text-center mt-3 mb-5 d-grid">
-      <%= button_to "退会する", withdrawal_path, method: :patch, form: { data: { turbo_confirm: "本当に退会しますか？" } }, class: "btn btn-orange col-4 mt-3" %>
+      <%= button_to "退会する", withdrawal_user_path, method: :patch, form: { data: { turbo_confirm: "本当に退会しますか？" } }, class: "btn btn-orange col-4 mt-3" %>
     </div>
   </div>
 </div>

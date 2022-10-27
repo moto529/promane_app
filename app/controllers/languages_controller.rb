@@ -11,7 +11,7 @@ class LanguagesController < ApplicationController
     @language.user = current_user
     if @language.save
       flash[:notice] = "#{@language.language}を登録しました"
-      redirect_to languages_path
+      redirect_to root_path
     else
       @user_languages = Language.where(user_id: current_user.id).includes(:user)
       render 'languages/index', status: :unprocessable_entity
@@ -24,7 +24,7 @@ class LanguagesController < ApplicationController
 
   def update
     if @language.update(language_params)
-      redirect_to languages_path
+      redirect_to root_path
       flash[:notice] = "#{@language.language}を編集しました"
     else
       @records = @language.records
@@ -35,7 +35,7 @@ class LanguagesController < ApplicationController
   def destroy
     @language.destroy
     flash[:notice] = "#{@language.language}を削除しました"
-    redirect_to languages_path
+    redirect_to root_path
   end
 
   private
