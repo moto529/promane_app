@@ -1,5 +1,11 @@
-<div class="bg-white mx-5 mt-4 border border-primary border-2 rounded-3">
-  <p class="bg-sky_blue text-black fs-5 text-center pt-3 rounded-2 fw-light" style="width: 100px; height: 64px;">履歴</p>
+<div class="row bg-white mx-5 mt-4 border border-primary border-2 rounded-3">
+  <div class="bg-sky_blue text-light fs-5 text-center pt-3 rounded-2 fw-light col-4" style="width: 100px; height: 64px;">履歴</div>
+  <div class="col-1">
+    <%= link_to "新しい順", history_users_path(latest: "true"), class: "btn btn-outline-primary btn-sm mt-2 ms-1" %>
+  </div>
+  <div class="col-1">
+    <%= link_to "古い順", history_users_path(old: "true"), class: "btn btn-outline-primary btn-sm mt-2" %>
+  </div>
   <% if @histories.present? %>
     <table class="table table-borderless mt-sm-4 mb-sm-5">
         <tr>
