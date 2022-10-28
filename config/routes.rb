@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   resources :languages, only: %i[index create show update destroy] do
     resources :records, only: %i[new create show update destroy], module: :languages
   end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
