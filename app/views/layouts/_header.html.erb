@@ -15,6 +15,9 @@
           <li class="nav-item me-lg-5 mt-2 ms-5 navbar-black">
             <%= link_to "履歴", history_users_path, class: "nav-link fw-bolder" %>
           </li>
+          <li class="nav-item me-lg-5 mt-2 ms-5 navbar-black">
+            <%= link_to "統計", statistic_users_path, class: "nav-link fw-bolder" %>
+          </li>
           <li class="nav-item me-lg-5 mt-2 ms-5">
             <%= link_to current_user.last_name + current_user.first_name, user_path(current_user.id), class: "nav-link fw-bolder" %>
           </li>
