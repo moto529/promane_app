@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def statistic
     # 商と余りを出す。[時, 分]の形の配列を作る。
     @total_learning_time = @total_learning_times.divmod(60)
+    @languages = @users.find(current_user.id).languages.includes(:records)
   end
 
   def unsubscribe; end
