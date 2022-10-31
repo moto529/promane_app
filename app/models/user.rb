@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :password, presence: true, on: :create
 
-  enum gender: { man: 0, woman: 1, blank: 2 }
+  enum gender: { man: 0, woman: 1, other: 2 }
 
   # is_deletedがfalseならtrueを返すようにしている
   def active_for_authentication?
