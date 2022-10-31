@@ -41,6 +41,8 @@ gem 'nokogiri', ">= 1.13.9"
 
 gem 'cancancan'
 
+gem 'chartkick'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
