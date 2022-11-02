@@ -19,7 +19,7 @@
         <tr>
           <td></td>
           <td><%= link_to history.language.language, language_path(history.language.id), class: "link-dark" %></td>
-          <td><%= history.created_at.to_s(:datetime_jp) %></td>
+          <td><%= history.created_at.strftime('%Y年 %m月%d日 %H時%M分') %></td>
           <td><%= link_to history.detail.truncate(20), language_record_path(history.language.id, history.id),class: "link-dark" %></td>
           <td><%= history.learning_hours / 60 %>時間<%= history.laerning_minutes %>分</td>
         </tr>

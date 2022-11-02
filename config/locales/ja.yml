@@ -217,4 +217,4 @@ ja:
       gender:
         man: "男性"
         woman: "女性"
-        blank: "未記入"
+        other: "未記入"
