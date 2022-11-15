@@ -1,24 +1,43 @@
 # README
+### プロジェクト名: Promane_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+プログラミング学習を記録していくアプリケーション学習記録をグラフにして、確認することができます。
 
-* Ruby version
+### 使用技術
+* Ruby
+  3.1.2
+* Ruby on Rails
+  7.0.4
+* SQLite3
+  1.4
+* devise
+  4.8.1
+* Bootstrap
+  5.2.2
+* Chartkick
+  4.2.1
+  
+### 機能一覧
+* ユーザー登録,ログイン機能(devise)
 
-* System dependencies
+* 投稿機能
 
-* Configuration
+  * 言語登録、学習登録機能
 
-* Database creation
+* ソート機能(gem無し)
 
-* Database initialization
+* グラフ機能(Chartkick)
 
-* How to run the test suite
+### デモ
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### 今後の展望
 
-* ...
+* 学習を記録するときに、ストップウォッチを使った時間の記録を実装したい。
+
+* 言語ごとに、記録を確認できるように、絞り込み検索を実装したい(ransackを入れてみたが、うまくいかなかった)。
+
+* 学習を記録を誰かと共有する機能を作る。
+
+* SPAを実装してみたい。言語登録時にいちいちリロードされるのは、いけてない(Hotwireを使えば簡単に行けそう)。
