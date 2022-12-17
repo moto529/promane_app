@@ -43,6 +43,8 @@ gem 'cancancan'
 
 gem 'chartkick'
 
+gem 'loofah', '~> 2.2', '>= 2.2.2'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
